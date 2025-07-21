@@ -1,0 +1,14 @@
+[alias]
+	co = checkout
+	st = status
+	cb = checkout -b
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	alias = ! git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\ =\\ /
+	rh = reset --hard
+[user]
+	email = tomche.delev@sorsix.com
+	name = Tomche Delev
+[core]
+	autocrlf = input
+[init]
+	defaultBranch = main
