@@ -2,6 +2,7 @@
 	co = checkout
 	st = status
 	cb = checkout -b
+    rh = reset --hard
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	alias = ! git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\ =\\ /
 	rh = reset --hard

@@ -33,7 +33,8 @@ require("lazy").setup({
 
 	require("kickstart/plugins/conform"),
 
-	require("kickstart/plugins/cmp"),
+	-- require("kickstart/plugins/cmp"),
+	require("kickstart/plugins/blink"),
 
 	require("kickstart/plugins/tokyonight"),
 
@@ -52,6 +53,8 @@ require("lazy").setup({
 	require("custom/plugins/snacks"),
 
 	require("custom/plugins/supermaven"),
+
+	-- require("custom/plugins/kotlin"),
 
 	-- require("custom/plugins/codecompanion"),
 
