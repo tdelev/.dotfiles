@@ -62,7 +62,12 @@ return {
 				-- You can put your default mappings / updates / etc. in here
 				--  All the info you're looking for is in `:help telescope.setup()`
 				--
-				-- defaults = {
+				defaults = {
+					layout_strategy = "vertical",
+					layout_config = {
+						width = 0.8,
+					},
+				},
 				--   mappings = {
 				--     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
 				--   },
@@ -123,6 +128,32 @@ return {
 			vim.keymap.set("n", "<leader>sn", function()
 				builtin.find_files({ cwd = vim.fn.stdpath("config") })
 			end, { desc = "[S]earch [N]eovim files" })
+
+			vim.keymap.set("n", "<leader>gc", function()
+				local line = vim.fn.getline(".")
+				local col = vim.fn.col(".")
+
+				-- Find quoted string at cursor position
+				local word = nil
+
+				for start_pos, quote, content, end_pos in line:gmatch("()([\"'])(.-)%2()") do
+					if col >= start_pos and col < end_pos then
+						word = content
+						break
+					end
+				end
+
+				if not word or word == "" then
+					vim.notify("No quoted string found under cursor", vim.log.levels.WARN)
+					return
+				end
+
+				require("telescope.builtin").grep_string({
+					search = "\\." .. word .. "[^a-zA-Z0-9_-]",
+					glob_pattern = { "*.css", "*.scss", "*.less", "*.sass" },
+					use_regex = true,
+				})
+			end, { desc = "Go to CSS class definition" })
 
 			function vim.getVisualSelection()
 				vim.cmd('noau normal! "vy"')

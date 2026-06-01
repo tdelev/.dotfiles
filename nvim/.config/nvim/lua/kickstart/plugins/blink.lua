@@ -69,8 +69,8 @@ return {
 		-- (Default) Only show the documentation popup when manually triggered
 		completion = {
 			documentation = { auto_show = true },
-			auto_brackets = {
-				accept = {
+			accept = {
+				auto_brackets = {
 					semantic_token_resolution = { enabled = true, blocked_filetypes = { "java", "kotlin" } },
 					kind_resolution = { enabled = true, blocked_filetypes = { "java", "kotlin" } },
 				},

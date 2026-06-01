@@ -48,13 +48,15 @@ require("lazy").setup({
 
 	require("custom/plugins/autopairs"),
 
-	require("custom/plugins/harpoon"),
+	-- require("custom/plugins/harpoon"),
 
 	require("custom/plugins/snacks"),
 
 	require("custom/plugins/supermaven"),
 
-	-- require("custom/plugins/kotlin"),
+	require("custom/plugins/oil"),
+
+	require("custom/plugins/kotlin"),
 
 	-- require("custom/plugins/codecompanion"),
 
