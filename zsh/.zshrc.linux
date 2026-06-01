@@ -1,0 +1,14 @@
+# Linux-specific zsh config. Sourced from .zshrc when DOTFILES_OS=linux.
+
+# Standalone-installed tools under /opt
+export PATH="$PATH:/opt/viber"
+export PATH="/opt/zig-0.15.2:$PATH"
+export PATH="$PATH:/opt/nvim-linux64/bin"
+
+# JetBrains Toolbox scripts
+export PATH="$PATH:$HOME/.local/share/JetBrains/Toolbox/scripts"
+
+# Linuxbrew
+if [[ -x /home/linuxbrew/.linuxbrew/bin/brew ]]; then
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
