@@ -31,3 +31,24 @@ vim.keymap.set('n', '<leader>Y', [["+Y]])
 
 -- Telescope grep_string from visual selection
 vim.keymap.set('x', '<leader>ss', '"zy<Cmd>lua require("telescope.builtin").grep_string({search=vim.fn.getreg("z")})<CR>')
+
+-- Telescope find_files
+vim.keymap.set('n', '<leader>p', function()
+  require('telescope.builtin').find_files()
+end, { desc = '[P]roject files (Telescope)' })
+
+vim.keymap.set('n', 'gi', function()
+  require('telescope.builtin').lsp_implementations()
+end, { desc = '[G]oto [I]mplementation' })
+
+vim.keymap.set('n', 'gd', function()
+  require('telescope.builtin').lsp_definitions()
+end, { desc = '[G]oto [I]mplementation' })
+
+vim.keymap.set('n', '<leader>o', function()
+  require('telescope.builtin').lsp_document_symbols()
+end, { desc = 'Open Document Symbols' })
+
+vim.keymap.set('n', 'gr', function()
+  require('telescope.builtin').lsp_references()
+end, { desc = '[G]o to [R]eferences' })
